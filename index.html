@@ -7,8 +7,42 @@
     <title>Scoreboard</title>
   </head>
   <body>
+    <!-- CONTAINER DIV -->
     <div class="container">
-      <h1>Hello World</h1>
-    </div>
+
+      <!-- HEADER DIV (TITLE) -->
+      <div class="header">
+        <img  id="ymca-logo" src="img/ymca-logo.png" alt="YMCA Logo">
+        <h2 id="title">Scoreboard</h2>
+      </div><!-- HEADER DIV END -->
+
+      <!-- TIMER DIV (CLOCK TIME) -->
+      <div id="timer">
+        <h2 id="time">15:00</h2>
+      </div><!-- TIMER DIV END -->
+
+      <!-- SCORES DIV -->
+      <div id="scores">
+        <!-- TEAMS (GUEST/HOME) -->
+        <h2 class="team-guest">Guest</h2>
+        <h2 class="team-home">Home</h2>
+
+        <!-- POINTS -->
+        <div id="points">
+          <div id="guest-points">0</div>
+          <div id="home-points">0</div>
+        </div><!-- POINTS DIV END -->
+
+        <!-- ARROW DIV -->
+        <div id="arrows">
+          <img class="red-arrow" id="guest-decrease-arrow" src="img/red-arrow.png" alt="Red Down Arrow">
+          <img class="green-arrow" id="guest-increase-arrow" src="img/green-arrow.png" alt="Green Up Arrow">
+          <img class="red-arrow" id="home-decrease-arrow" src="img/red-arrow.png" alt="Red Down Arrow">
+          <img class="green-arrow" id="home-increase-arrow" src="img/green-arrow.png" alt="Green Up Arrow">
+        </div>
+
+      </div><!-- SCORES DIV END -->
+
+    </div><!-- CONTAINER DIV END -->
   </body>
 </html>

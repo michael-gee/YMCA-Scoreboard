@@ -5,13 +5,105 @@ body {
   margin: 0;
   font-size: 62.5%;
   background-color: #00A591;
+  font-family: arial;
 }
+
+/* HEADINGS */
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+  /* YMCA SCOREBOARD TITLE */
+  #title {
+    float: left;
+    font-size: 2.5em;
+    padding-top: 15px;
+    margin-left: 7px;
+    font-family: georgia;
+  }
+
+/* IMAGES */
+img {
+  max-width: 100%;
+}
+
+  /* YMCA LOGO IMG */
+  #ymca-logo {
+    width: 70px;
+    float: left;
+  }
+
+  /* GREEN AND RED ARROW IMAGES */
+  .green-arrow, .red-arrow {
+    width: 55px;
+    cursor: pointer;
+  }
 
 /* CONTAINER DIV */
 .container {
-  width: 480px;
-  height: 375px;
-  margin: 0 auto;
+  width: 320px;
+  height: 568px;
+  margin: 10px auto;
   border-radius: 10px;
   background-color: white;
 }
+
+  /* HEADER DIV */
+  .header {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 5px;
+  }
+
+  /* TIMER DIV (CLOCK TIME) */
+  #timer {
+    clear: both;
+    width: 100%;
+    font-size: 4em;
+    padding-top: 5px;
+  }
+    #time {
+      text-align: center;
+    }
+
+/* POINTS DIV */
+#scores {
+  padding-top: 5px;
+}
+
+  .team-guest, .team-home {
+    font-size: 2.5em;
+    float: left;
+    padding-left: 53px;
+    font-weight: normal;
+  }
+    .team-home {
+      padding-left: 70px;
+    }
+
+  /* POINTS DIV */
+  #points {
+    clear: both;
+  }
+  #guest-points, #home-points {
+    float: left;
+    font-size: 7.5em;
+  }
+    #guest-points {
+      padding-left: 68px;
+    }
+    #home-points {
+      padding-left: 93px;
+    }
+
+    /* ARROWS DIV */
+    #arrows {
+      clear: both;
+    }
+      /* ARROWS */
+      #guest-decrease-arrow {
+        padding-left: 30px;
+      }
+      #home-decrease-arrow {
+        padding-left: 20px;
+      }
