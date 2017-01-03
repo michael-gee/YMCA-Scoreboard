@@ -108,6 +108,8 @@ img {
         padding: 10px;
         cursor: pointer;
         border-radius: 10px;
+        user-select: none;
+        -moz-user-select: none;
       }
         #guest-minus {
           margin-left: 33px;
@@ -140,6 +142,8 @@ img {
     padding: 15px;
     border-radius: 10px;
     cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
   }
     #play-button:hover, #pause-button:hover, #reset-button:hover {
       background-color: #2f2f2f;
@@ -165,6 +169,8 @@ img {
   cursor: pointer;
   margin-left: 5px;
   margin-right: 5px;
+  user-select: none;
+  -moz-user-select: none;
 }
   .time-plus {
     color: green;
