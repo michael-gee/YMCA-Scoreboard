@@ -41,9 +41,10 @@ img {
 
 /* CONTAINER DIV */
 .container {
-  width: 320px;
+  width: 340px;
   height: 568px;
   margin: 10px auto;
+  margin-bottom: 0;
   border-radius: 10px;
   background-color: white;
 }
@@ -74,11 +75,11 @@ img {
   .team-guest, .team-home {
     font-size: 2.5em;
     float: left;
-    padding-left: 53px;
+    padding-left: 60px;
     font-weight: normal;
   }
     .team-home {
-      padding-left: 70px;
+      padding-left: 80px;
     }
 
   /* POINTS DIV */
@@ -90,10 +91,10 @@ img {
     font-size: 7.5em;
   }
     #guest-points {
-      padding-left: 68px;
+      padding-left: 75px;
     }
     #home-points {
-      padding-left: 93px;
+      padding-left: 102px;
     }
 
     /* ARROWS DIV */
@@ -102,8 +103,8 @@ img {
     }
       /* ARROWS */
       #guest-decrease-arrow {
-        padding-left: 30px;
+        padding-left: 40px;
       }
       #home-decrease-arrow {
-        padding-left: 20px;
+        padding-left: 30px;
       }
