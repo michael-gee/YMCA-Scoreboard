@@ -1,11 +1,11 @@
 /* BODY */
 body {
   width: 100%;
-  height: 100%;
   margin: 0;
   font-size: 62.5%;
   background-color: #00A591;
   font-family: arial;
+  overflow: none;
 }
 
 /* HEADINGS */
@@ -16,8 +16,8 @@ h1,h2,h3,h4,h5,h6 {
   /* YMCA SCOREBOARD TITLE */
   #title {
     float: left;
-    font-size: 2.5em;
-    padding-top: 15px;
+    font-size: 2.7em;
+    padding-top: 18px;
     margin-left: 7px;
     font-family: georgia;
   }
@@ -29,7 +29,7 @@ img {
 
   /* YMCA LOGO IMG */
   #ymca-logo {
-    width: 70px;
+    width: 85px;
     float: left;
   }
 
@@ -108,3 +108,45 @@ img {
       #home-decrease-arrow {
         padding-left: 30px;
       }
+
+/* BUTTONS DIV */
+#buttons {
+  clear: both;
+  padding-top: 20px;
+  text-align: center;
+}
+
+  #play-button, #pause-button, #reset-button {
+    background-color: black;
+    margin-right:10px;
+    margin-left: 10px;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+    #play-button:hover, #pause-button:hover, #reset-button:hover {
+      background-color: #2f2f2f;
+    }
+
+
+/* MINUTES AND SECONDS DIVS */
+#minutes, #seconds {
+  padding-top: 20px;
+  width: 50%;
+  text-align: center;
+  font-size: 1.8em;
+}
+  #minutes {
+    clear: both;
+    float: left;
+  }
+  #seconds {
+    float: right;
+  }
+
+.plus, .minus {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+}

@@ -1,1 +1,3 @@
-console.log("Connected to scripts.js");
+var func = (function scripts(){
+
+})();
