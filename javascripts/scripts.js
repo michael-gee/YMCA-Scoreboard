@@ -1,1 +1,1 @@
-console.log("Hello World");
+console.log("Connected to scripts.js");
