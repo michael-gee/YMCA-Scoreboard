@@ -1,14 +1,13 @@
 var func = (function scripts(){
   //Initial *****TIME***** Set Up
-  var currentlyPlaying = false;
-  var minutes = 15;
-  var seconds = 0;
-    if(seconds === 0){
-      seconds = "00";
-    } else if(seconds < 10) {
-      seconds = "0" + seconds;
-    }
-  var time = `${minutes}:${seconds}`;
+  var currentlyPlaying = false,
+      minutes = 15,
+      seconds = 0,
+      countDownTimer;
+      if(seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      var time = `${minutes}:${seconds}`;
   document.getElementById("time").innerHTML = time;
 
 //*****SCORE*****
@@ -90,7 +89,7 @@ function checkPointTotal() {
     document.getElementById("home-points").style.paddingLeft = "102px";
   }
 
-  console.log("asdsa");
+  console.log("cc");
 }
 
 //*****TIME*****
@@ -120,7 +119,7 @@ secondsMinus.addEventListener("click", function(){
   subtractTime("seconds");
 });
 
-// ADD/Subtract TIME FUNCTIONS
+// *****BUTTON FUNCTIONS*****ADD/Subtract TIME FUNCTIONS
 //Add Time
 function addTime(min_sec){
   if(currentlyPlaying === true){
@@ -128,16 +127,18 @@ function addTime(min_sec){
   }else {
     if(min_sec === "minutes"){
       minutes = minutes + 1;
-      time = `${minutes}:${seconds}`;
-      document.getElementById("time").innerHTML = time;
+      updateHTML();
     } else if(min_sec === "seconds"){
+      if(seconds >= 59){
+        seconds = "0" + 0;
+        updateHTML();
+        return false;
+      }
       seconds = parseInt(seconds) + 1;
-      // ADD THE CONDITION THAT WHEN THE SECONDS GO OVER 60 SECONDS GOES BACK DOWN TO 0
       if(seconds < 10) {
         seconds = "0" + seconds;
       }
-      time = `${minutes}:${seconds}`;
-      document.getElementById("time").innerHTML = time;
+      updateHTML();
     }
   }
 }
@@ -149,16 +150,105 @@ function subtractTime(min_sec){
   }else {
     if(min_sec === "minutes" && minutes != 1){
       minutes = minutes - 1;
-      time = `${minutes}:${seconds}`;
-      document.getElementById("time").innerHTML = time;
+      updateHTML();
     } else if(min_sec === "seconds" && seconds != 0){
       seconds = seconds - 1;
       if(seconds < 10) {
         seconds = "0" + seconds;
       }
-      time = `${minutes}:${seconds}`;
-      document.getElementById("time").innerHTML = time;
+      updateHTML();
+    } else if(min_sec === "seconds" && seconds == 0){
+      if(parseInt(seconds) == 0){
+        seconds = 59;
+        updateHTML();
+      }
     }
+  }
+}
+
+//Scoreboard TIME Button Events
+
+//Time Button Variables
+var playButton = document.getElementById("play-button");
+var pauseButton = document.getElementById("pause-button");
+var resetButton = document.getElementById("reset-button");
+
+//Time Button addEventListeners
+playButton.addEventListener("click", start);
+pauseButton.addEventListener("click", pause);
+resetButton.addEventListener("click", reset);
+
+
+//Update HTML function
+function updateHTML(){
+  time = `${minutes}:${seconds}`;
+  document.getElementById("time").innerHTML = time;
+}
+
+//CountDown Timer Function
+var countDown = () => {
+
+  countDownTimer = setInterval(function(){
+  seconds--;
+  if(seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  updateHTML();
+
+  if(seconds == 00 && minutes > 0){
+  minutes--;
+  seconds += 60;
+} else if ( minutes == 0 && seconds == 00){
+  alert("Time is Up!");
+}
+}, 1000)//setInterval bracket end
+
+}// countDown() bracket end
+
+//Start
+function start(){
+  if(currentlyPlaying === true){
+    return false;
+  } else {
+    currentlyPlaying = true;
+
+    if(seconds == 0){
+      seconds = 0;
+      seconds += 59;
+      minutes--;
+    } else {
+      seconds = seconds;
+    }
+
+    updateHTML();
+    countDown();
+  }
+}
+
+//Pause
+//pause button function ()
+function pause(){
+  currentlyPlaying = false;
+  clearInterval(countDownTimer);
+}
+
+//Reset function
+function reset(){
+  if(currentlyPlaying === true){
+    return false;
+  }else {
+    currentlyPlaying = false;
+    minutes = 15;
+    seconds = 0;
+    if(seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    guestPoints = 0;
+    homePoints = 0;
+    document.getElementById("guest-points").innerHTML = guestPoints;
+    document.getElementById("home-points").innerHTML = homePoints;
+    updateHTML();
   }
 }
 
