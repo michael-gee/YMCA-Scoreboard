@@ -88,8 +88,6 @@ function checkPointTotal() {
     document.getElementById("guest-points").style.paddingLeft = "75px";
     document.getElementById("home-points").style.paddingLeft = "102px";
   }
-
-  console.log("cc");
 }
 
 //*****TIME*****
@@ -200,6 +198,8 @@ var countDown = () => {
   seconds += 60;
 } else if ( minutes == 0 && seconds == 00){
   alert("Time is Up!");
+  clearInterval(countDownTimer);
+  return false;
 }
 }, 1000)//setInterval bracket end
 
@@ -207,7 +207,7 @@ var countDown = () => {
 
 //Start
 function start(){
-  if(currentlyPlaying === true){
+  if(currentlyPlaying === true || minutes == 0 && seconds == 00){
     return false;
   } else {
     currentlyPlaying = true;
