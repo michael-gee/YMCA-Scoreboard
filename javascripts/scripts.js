@@ -248,6 +248,8 @@ function reset(){
     homePoints = 0;
     document.getElementById("guest-points").innerHTML = guestPoints;
     document.getElementById("home-points").innerHTML = homePoints;
+    document.getElementById("guest-points").style.paddingLeft = "75px";
+    document.getElementById("home-points").style.paddingLeft = "102px";
     updateHTML();
   }
 }
