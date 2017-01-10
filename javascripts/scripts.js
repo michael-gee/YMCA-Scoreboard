@@ -70,8 +70,6 @@ var func = (function scripts(){
       document.getElementById("home-points").innerHTML = homePoints;
     }
 
-    console.log("reddd");
-
     checkPointTotal();
   }
 
