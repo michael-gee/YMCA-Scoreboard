@@ -70,6 +70,8 @@ var func = (function scripts(){
       document.getElementById("home-points").innerHTML = homePoints;
     }
 
+    console.log("reddd");
+
     checkPointTotal();
   }
 
@@ -83,10 +85,10 @@ function checkPointTotal() {
     document.getElementById("home-points").style.paddingLeft = "77px";
   }else if(guestPoints >= 10 && homePoints < 10){
     document.getElementById("guest-points").style.paddingLeft = "53px";
-    document.getElementById("home-points").style.paddingLeft = "81px";
+    document.getElementById("home-points").style.paddingLeft = "85px";
   }else {
     document.getElementById("guest-points").style.paddingLeft = "75px";
-    document.getElementById("home-points").style.paddingLeft = "102px";
+    document.getElementById("home-points").style.paddingLeft = "104px";
   }
 }
 
@@ -249,7 +251,7 @@ function reset(){
     document.getElementById("guest-points").innerHTML = guestPoints;
     document.getElementById("home-points").innerHTML = homePoints;
     document.getElementById("guest-points").style.paddingLeft = "75px";
-    document.getElementById("home-points").style.paddingLeft = "102px";
+    document.getElementById("home-points").style.paddingLeft = "104px";
     updateHTML();
   }
 }
